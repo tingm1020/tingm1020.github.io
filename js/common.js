@@ -76,6 +76,9 @@ $(document).ready(function(){
         breakpoints:{
             1100:{
                 slidesPerView: 1.5,
+            },
+            768:{
+                slidesPerView:1,
             }
         }
 
@@ -375,6 +378,79 @@ $(document).ready(function(){
                 }
             }
             });
+
+            var horizontalBarChart = new Chart(horizontalBarChartCanvasM, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ["內部人員不熟悉數位相關事務", "公司缺乏對數位轉型的全面性規劃", "外聘數位人才困難", "數位工具/系統，導入不容易", "組織工作固化，推動新事務進程緩慢", "跨部門間的協調機制不完善", "需投入的成本過高", "成效衡量(KPI)不明確", "與既有業務產生摩擦與衝突", "小範圍試驗的專案，價值不明顯", "決策層對數位轉型內容的共識不足", "公司沒有專職數位轉型的部門", "企業最高主管的參與度低", "其他"],
+                    datasets: [{
+                        data: [35.2, 34.5, 32.7, 32.7, 32.7, 32.1, 28.5,25.5,17,17,15.2,13.9,8.5,1.8],
+                        backgroundColor: ["#4c86ed", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec"], 
+                    }]
+                },
+                options: {
+                    tooltips: {
+                        enabled: false
+                    },
+                    responsive: true,
+                    legend: {
+                        display: false,
+                        position: 'bottom',
+                        fullWidth: true,
+                        labels: {
+                            boxWidth: 30,
+                            padding: 50
+                        }
+                    },
+                    scales: {
+                        yAxes: [{
+                        barPercentage: 1,
+                        gridLines: {
+                            display: true,
+                            drawTicks: true,
+                            drawOnChartArea: false
+                        },
+                        ticks: {
+                            fontColor: '#555759',
+                            fontFamily: 'Lato',
+                            fontSize: 12
+                        }
+                            
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                            display: true,
+                            drawTicks: false,
+                            tickMarkLength: 5,
+                            drawBorder: false
+                            },
+                        ticks: {
+                            padding: 5,
+                            beginAtZero: true,
+                            fontColor: '#555759',
+                            fontFamily: 'Lato',
+                            fontSize: 12,
+                            callback: function(label, index, labels) {
+                            return label/100;
+                            }
+                            
+                        },
+                            scaleLabel: {
+                            display: true,
+                            padding: 10,
+                            fontFamily: 'Lato',
+                            fontColor: '#555759',
+                            fontSize: 16,
+                            fontStyle: 700,
+                            labelString: '員工不熟悉數位事務，讓企業轉型卡關(%)'
+                            },
+                        
+                        }]
+                    }
+                }
+                });
+        
+
 
         var data10 = {
             labels: [

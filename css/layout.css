@@ -591,6 +591,10 @@ button.swiper-pagination-bullet {
   transition: all .7s;
 }
 
+.header .navList {
+  display: none;
+}
+
 /*=============================================
 =                     index                   =
 =============================================*/

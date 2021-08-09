@@ -883,6 +883,7 @@ button.swiper-pagination-bullet {
   background: url(../img/page1_bg1.png) 50% 50% no-repeat;
   background-attachment: fixed;
   background-position: top left;
+  height: 100%;
 }
 
 .main .page1 .contBox {

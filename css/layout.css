@@ -1962,6 +1962,12 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media screen and (max-width: 414px) {
+  .main .step1 .contBlock .box .txt h5 {
+    letter-spacing: -1px;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .main .page .title {
     font-size: 18px;
@@ -1974,6 +1980,7 @@ button.swiper-pagination-bullet {
   }
   .main .step1 .contBlock .box .txt h5 {
     font-size: 18px;
+    letter-spacing: 0;
   }
   .main .step1 .contBlock .box.dec {
     width: 88%;

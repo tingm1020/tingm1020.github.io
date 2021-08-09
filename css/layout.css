@@ -879,7 +879,6 @@ button.swiper-pagination-bullet {
 }
 
 .main .page1 {
-  background-attachment: fixed;
   background: url(../img/page1_bg1.png) 50% 50% no-repeat;
   background-attachment: fixed;
   background-position: top left;
@@ -1839,6 +1838,9 @@ button.swiper-pagination-bullet {
   .main .step .title p {
     width: 80%;
     margin: 0 10%;
+  }
+  .main .page1 {
+    background-attachment: initial;
   }
   .main .page1 .contBox {
     max-width: 500px;

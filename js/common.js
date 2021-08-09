@@ -31,26 +31,26 @@ $(document).ready(function(){
             $('.mbNavBtn,.navList').toggleClass('on');
         }
     });
-    // $(window).scroll(function () {
-    //     var p1 = $('.kv').height() * .8;
-    //     if (getScrollTop() > p1) {
-    //         $('.page1 .part1').addClass('on');
-    //     } else {
-    //         $('.page1 .part1').removeClass('on');
-    //     }
-    // });
-    // function getScrollTop() {
-    //     var bodyTop = 0;
-    //     if (typeof window.pageY0ffset != "undefined") {
-    //         bodyTop = window.pageY0ffset;
-    //     } else if (typeof document.compatMode != "undefined" &&
-    //         document.compatMode != "BackCompat") {
-    //         bodyTop = document.documentElement.scrollTop;
-    //     } else if (typeof document.body != "undefined") {
-    //         bodyTop = document.body.scrollTop;
-    //     }
-    //     return bodyTop;
-    // }
+    $(window).scroll(function () {
+        var p1 = $('.kv').height() * 1;
+        if (getScrollTop() > p1) {
+            $('.goTop').addClass('on');
+        } else {
+            $('.goTop').removeClass('on');
+        }
+    });
+    function getScrollTop() {
+        var bodyTop = 0;
+        if (typeof window.pageY0ffset != "undefined") {
+            bodyTop = window.pageY0ffset;
+        } else if (typeof document.compatMode != "undefined" &&
+            document.compatMode != "BackCompat") {
+            bodyTop = document.documentElement.scrollTop;
+        } else if (typeof document.body != "undefined") {
+            bodyTop = document.body.scrollTop;
+        }
+        return bodyTop;
+    }
     $(window).resize(function () { });
     var mySwiper1 = new Swiper('.swiper-container1', {
         initialSlide:0,
@@ -378,7 +378,76 @@ $(document).ready(function(){
                 }
             }
             });
-
+            var horizontalBarChart = new Chart(horizontalBarChartCanvas1M, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ["接入新的數位工具", "公司軟硬體設備升級", "培訓員工", "投入新的經費", "新聘數位相關人員", "其他", "沒有"],
+                    datasets: [{
+                        data: [63.7, 54.4, 43.9, 32.2, 15.2, 5.3, 12.3],
+                        backgroundColor: ["#4c86ed", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec", "#99b7ec"], 
+                    }]
+                },
+                options: {
+                    tooltips: {
+                        enabled: false
+                    },
+                    responsive: true,
+                    legend: {
+                        display: false,
+                        position: 'bottom',
+                        fullWidth: true,
+                        labels: {
+                            boxWidth: 30,
+                            padding: 50
+                        }
+                    },
+                    scales: {
+                        yAxes: [{
+                        barPercentage: 1,
+                        gridLines: {
+                            display: true,
+                            drawTicks: true,
+                            drawOnChartArea: false
+                        },
+                        ticks: {
+                            fontColor: '#555759',
+                            fontFamily: 'Lato',
+                            fontSize: 12
+                        }
+                            
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                            display: true,
+                            drawTicks: false,
+                            tickMarkLength: 5,
+                            drawBorder: false
+                            },
+                        ticks: {
+                            padding: 5,
+                            beginAtZero: true,
+                            fontColor: '#555759',
+                            fontFamily: 'Lato',
+                            fontSize: 12,
+                            callback: function(label, index, labels) {
+                            return label/100;
+                            }
+                            
+                        },
+                            scaleLabel: {
+                            display: true,
+                            padding: 10,
+                            fontFamily: 'Lato',
+                            fontColor: '#555759',
+                            fontSize: 16,
+                            fontStyle: 700,
+                            // labelString: '員工不熟悉數位事務，讓企業轉型卡關(%)'
+                            },
+                        
+                        }]
+                    }
+                }
+                });
             var horizontalBarChart = new Chart(horizontalBarChartCanvasM, {
                 type: 'horizontalBar',
                 data: {

@@ -49,7 +49,8 @@
         <div class="wrapper">
             <div class="main">
                 <div class="kv">
-                    <img src="img/kv.png" alt="" style="width: 100%;">
+                    <img src="img/kv.png" alt="" style="width: 100%;" class="pcShow">
+                    <img src="img/kv_m.png" alt="" style="width: 100%;" class="mShow">
                     <div class="block">
                         <div class="item">
                             <div class="title">
@@ -73,7 +74,7 @@
                 </div>
                 <div class="page page1">
                     <div class="block">
-                        <div class="title">各企業憑數位實力，挺過疫情生存戰</div>
+                        <div class="title">各企業憑數位實力，<span>挺過疫情生存戰</span></div>
                         <div class="contBox">
                             <div class="box" data-cont="cont1">
                                 <div class="icon"></div>
@@ -119,7 +120,7 @@
                     </div>
                 </div>
                 <div class="page page2">
-                    <div class="title">逾三成企業擴編數位人力、追加轉型預算 </div>
+                    <div class="title">逾三成企業擴編數位人力、<span>追加轉型預算</span></div>
                     <div class="swiper-container swiper-container1">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
@@ -270,8 +271,11 @@
                                 <div class="subTitle">數位轉型的「卡關點」</div>
                             </div>
                             <div class="cont">
-                                <div class="chart">
+                                <div class="chart pcShow">
                                     <canvas id="horizontalBarChartCanvas" width="400" height="200"></canvas>
+                                </div>
+                                <div class="chart mShow">
+                                    <canvas id="horizontalBarChartCanvasM" width="500" height="500"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -283,16 +287,17 @@
                                         <img src="img/step_img4.png" alt="" style="width: 100%;">
                                         <div class="mode">任務</div>
                                     </div>
-                                    <div class="sub txt">指派多個團隊分頭研究進行，例如連接器線束大廠貿聯，
-                                        <br>本次調查企業之中，以此模式轉型者最多，
-                                        <br>約占受訪企業<span>55.8％</span>。
+                                    <div class="sub txt">指派多個團隊分頭研究進行，例如連接器線束大廠貿聯，本次調查企業之中，以此模式轉型者最多，約占受訪企業<span>55.8％</span>。
                                     </div>
                                 </div>
                                 <div class="box">
-                                    <div class="sub txt">派單一主管統籌轉型策略，領導專責團隊共同執行，
-                                        例如資深金融品牌第一銀行，此模式約占<span>38.7％</span>。 
+                                    <div class="sub img mShow">
+                                        <img src="img/step_img5.png" alt="" style="width: 100%;">
+                                        <div class="mode">人</div>
                                     </div>
-                                    <div class="sub img">
+                                    <div class="sub txt">派單一主管統籌轉型策略，領導專責團隊共同執行，例如資深金融品牌第一銀行，此模式約占<span>38.7％</span>。 
+                                    </div>
+                                    <div class="sub img pcShow">
                                         <img src="img/step_img5.png" alt="" style="width: 100%;">
                                         <div class="mode">人</div>
                                     </div>
@@ -302,14 +307,13 @@
                                         <img src="img/step_img6.png" alt="" style="width: 100%;">
                                         <div class="mode">錢</div>
                                     </div>
-                                    <div class="sub txt">規劃特定期間內的經費預算，例如傳產廠家新光鋼鐵，
-                                        各任務單位可提案爭取執行，此模式約占<span>4.3％</span>。 
+                                    <div class="sub txt">規劃特定期間內的經費預算，例如傳產廠家新光鋼鐵，各任務單位可提案爭取執行，此模式約占<span>4.3％</span>。 
                                     </div>
                                 </div>
                                 <div class="pie">
                                     <canvas id="piechart"></canvas>
                                 </div>
-                                <div class="subTitle">55.8%企業轉型以「任務」為核心</div>
+                                <div class="subTitle">55.8%企業轉型<span>以「任務」為核心</span></div>
                                 <div class="txt">值得注意的是，企業在啟動數位轉型的評估階段，有多達42.4％企業選擇先以「人」為核心，6.9％企業以「錢」為核心，在執行一段時間後，才轉換為以「任務」為核心，可做為企業中長期規劃的重要參考。 </div>
                             </div>
                         </div>
@@ -321,7 +325,7 @@
                     </div>
                 </div>
                 <div class="page page3">
-                    <div class="title">當企業數位力完備，數位長就能「被消失」</div>
+                    <div class="title">當企業數位力完備，<span>數位長就能「被消失」</span></div>
                     <div class="txt">
                         非常值得玩味的是，研究發現，數位長的平均任期只有31個月，是所有「C級高階主管」中最短的，而且，任職時間還在縮短，原因在於「數位轉型不是數位化」，轉型在任何地方都不受歡迎，沒有人想改變，內部阻力強大。 
                         <br><br>
@@ -340,9 +344,9 @@
         <script src="js/plugin/jquery-3.5.1.min.js"></script>
         <script src="js/plugin/swiper.min.js"></script>
         <script type="text/javascript" src="js/common.js"></script>
-        <script src="http://static.pureexample.com/js/flot/jquery.flot.min.js"></script>
-        <script src="http://static.pureexample.com/js/flot/jquery.flot.pie.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-piechart-outlabels"></script> 
+        <script src="js/plugin/jquery.flot.min.js"></script>
+        <script src="js/plugin/jquery.flot.pie.min.js"></script>
+        <script src="js/plugin/Chart.js"></script>
+        <script src="js/plugin/chartjs-plugin-piechart-outlabels.js"></script> 
     </body>
 </html>

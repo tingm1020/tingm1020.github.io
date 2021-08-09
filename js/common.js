@@ -28,7 +28,7 @@ $(document).ready(function(){
         if($(this).hasClass('on')){
             $('.mbNavBtn,.navList').removeClass('on');
         } else{
-            $('.mbNavBtn,.navList').toggleClass('on');
+            $('.mbNavBtn,.navList').addClass('on');
         }
     });
     $(window).scroll(function () {
